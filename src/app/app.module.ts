@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     MatMenuModule,
     AppRoutingModule,
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

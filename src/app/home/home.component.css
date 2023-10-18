@@ -1,0 +1,23 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.global_contain{
+    height: 100vh;
+}
+
+.contain_image{
+   background-image: url('../../assets/Images/Weights-header-scaled.jpeg');
+   filter: brightness(0.3);
+   height:100vh;
+
+}
+
+.test{
+    background-color: red;
+    height:50vh;
+    width:70vh;
+}
+
+
