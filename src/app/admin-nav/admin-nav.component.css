@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #ff6e6c;
+    height: 10vh;
+    align-items: center;
+}
+
+.nav-right{
+    display: flex;
+}
+
+.navbar-item{
+    padding-right: 5vh;
+}
+
+.navbar-item > a {
+    text-decoration: none;
+    color: white;
+}

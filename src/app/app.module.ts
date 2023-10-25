@@ -6,12 +6,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AdministrationComponent } from './administration/administration.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AddExComponent } from './add-ex/add-ex.component';
+import { DeleteExComponent } from './delete-ex/delete-ex.component';
+import { UpdateExComponent } from './update-ex/update-ex.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    AdministrationComponent,
+    AdminNavComponent,
+    AddExComponent,
+    DeleteExComponent,
+    UpdateExComponent,
   ],
   imports: [
     BrowserModule,

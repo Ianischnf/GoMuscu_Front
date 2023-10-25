@@ -1,0 +1,38 @@
+.Container_Form_global{
+    background-color: #ff6e6c;
+    height: 30vh;
+    width: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 20%;
+    border-radius: 3vh;
+    padding: 5vh;
+    color: white;
+}
+
+/* CSS */
+.form-group {
+    margin-bottom: 15px; /* Espacement entre chaque groupe label + input */
+}
+
+label {
+    display: flex;
+    width: 120px; /* Largeur du label (ajustez selon vos besoins) */
+}
+
+input[type="text"] {
+    width: 30vh; /* Largeur du champ de texte (remplit l'espace restant) */
+    border-radius: 2vh;
+    border:none;
+    padding: 0.5vh;
+    padding-left: 1vh;
+}
+
+.btn_create_exo{
+    background-color: white;
+    padding: 2vh;
+    border-radius: 1vh;
+    border: none;
+}
