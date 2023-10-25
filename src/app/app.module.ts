@@ -12,6 +12,8 @@ import { AddExComponent } from './add-ex/add-ex.component';
 import { DeleteExComponent } from './delete-ex/delete-ex.component';
 import { UpdateExComponent } from './update-ex/update-ex.component';
 import { MuscleComponent } from './muscle/muscle.component';
+import { ProposComponent } from './propos/propos.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { MuscleComponent } from './muscle/muscle.component';
     DeleteExComponent,
     UpdateExComponent,
     MuscleComponent,
+    ProposComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

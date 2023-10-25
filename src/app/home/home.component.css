@@ -1,21 +1,35 @@
-body{
-    margin: 0%;
-    padding: 0%;
-}
-
-.global_contain{
+.Container_Global{
+    background-image: url("../../assets/Images/background.jpg");
+    background-size:230vh;
+    background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
-.contain_image{
-   background-image: url('../../assets/Images/Weights-header-scaled.jpeg');
-   filter: brightness(0.3);
-   height:100vh;
 
+.Bienvenue_contain{
+    /* background-color: brown; */
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.test{
-    background-color: red;
-    height:50vh;
-    width:70vh;
+.Contain_Message{
+    /* background-color: blue; */
+    height: 50vh;
+    width: 70vh;
+    margin-left: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Message{
+    /* background-color:blueviolet; */
+    height: 20vh;
+    color: white;
 }
