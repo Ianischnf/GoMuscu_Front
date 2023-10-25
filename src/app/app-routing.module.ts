@@ -5,10 +5,12 @@ import { AdministrationComponent } from './administration/administration.compone
 import { AddExComponent } from './add-ex/add-ex.component';
 import { DeleteExComponent } from './delete-ex/delete-ex.component';
 import { UpdateExComponent } from './update-ex/update-ex.component';
+import { MuscleComponent } from './muscle/muscle.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'muscle', component: MuscleComponent },
   { path: 'admin', component: AdministrationComponent },
   { path: 'AddEx', component: AddExComponent },
   { path: 'DeleteEx', component: DeleteExComponent },

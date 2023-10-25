@@ -11,6 +11,7 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddExComponent } from './add-ex/add-ex.component';
 import { DeleteExComponent } from './delete-ex/delete-ex.component';
 import { UpdateExComponent } from './update-ex/update-ex.component';
+import { MuscleComponent } from './muscle/muscle.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UpdateExComponent } from './update-ex/update-ex.component';
     AddExComponent,
     DeleteExComponent,
     UpdateExComponent,
+    MuscleComponent,
   ],
   imports: [
     BrowserModule,
