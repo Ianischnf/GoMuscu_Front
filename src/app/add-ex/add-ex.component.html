@@ -14,6 +14,7 @@
             </div>
         </div>
         <div class="Formulaire">
+               <!-- Formulaire ajout muscle -->
             <div *ngIf= "selectedFrom === 'muscle' " class="form">
                 <form (ngSubmit)="createExercise()">
                     <div class="form-group">
@@ -29,6 +30,8 @@
 
                 </form>
             </div>
+
+            <!-- Formulaire ajout exercice -->
 
             <div *ngIf= "selectedFrom === 'exercice' " class="form">
                 <form (ngSubmit)="createExercise()">
