@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-around;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 10%;
     border-radius: 3vh;
     padding: 5vh;
     color: white;
@@ -35,4 +35,48 @@ input[type="text"] {
     padding: 2vh;
     border-radius: 1vh;
     border: none;
+}
+
+.all_page{
+    /* background-color:red; */
+    height: 120vh;
+    padding-top: 25vh;
+}
+
+.Container_Block{
+    /* background-color: aqua; */
+    height: 60vh;
+    width: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Formulaire{
+    background-color:#ff6e6c;
+    height: 45vh;
+    width: 60vh;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+}
+
+.Radio{
+    background-color: #ff6e6c;
+    height: 7vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vh;
+}
+
+.radio_item{
+    padding-left: 5vh;
+    display: flex;
 }

@@ -21,6 +21,11 @@ const routes: Routes = [
   { path: 'AddEx', component: AddExComponent },
   { path: 'DeleteEx', component: DeleteExComponent },
   { path: 'UpdateEx', component: UpdateExComponent },
+
+  { path: 'create', component: AddExComponent },
+  // { path: 'read', component: ReadUsersComponent },
+  { path: 'update/:id', component: UpdateExComponent },
+  { path: 'delete/:id', component: DeleteExComponent },
 ];
 
 @NgModule({
