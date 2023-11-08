@@ -13,4 +13,16 @@
     align-items: center;
     justify-content: center;
     border-radius: 3vh;
+    color: white;
+}
+
+.global_contain{
+    background-image: url("../../assets/Images/background.jpg");
+    background-size:230vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
 }
