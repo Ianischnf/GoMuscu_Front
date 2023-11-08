@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ExerciceService {
- 
+
   private apiUrl = 'http://127.0.0.1:8000/exercice/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // Opération CREATE (Création d'un utilisateur)
   createExercice(muscle: any) {
@@ -33,4 +33,12 @@ export class ExerciceService {
     const url = `${this.apiUrl}${muscleId}/`;
     return this.http.delete(url);
   }
+
+  getExercisesByMuscleId(muscleId: number) {
+    const url = `${this.apiUrl}?muscleId=${muscleId}`;
+    console.log(muscleId);
+    
+    return this.http.get(url);
+  }
+
 }

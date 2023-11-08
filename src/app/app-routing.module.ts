@@ -8,6 +8,7 @@ import { UpdateExComponent } from './update-ex/update-ex.component';
 import { MuscleComponent } from './muscle/muscle.component';
 import { ProposComponent } from './propos/propos.component';
 import { ContactComponent } from './contact/contact.component';
+import { ExerciceListComponent } from './exercice-list/exercice-list.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +27,9 @@ const routes: Routes = [
   // { path: 'read', component: ReadUsersComponent },
   { path: 'update/:id', component: UpdateExComponent },
   { path: 'delete/:id', component: DeleteExComponent },
+
+  { path: 'listEx/:id', component: ExerciceListComponent },
+
 ];
 
 @NgModule({

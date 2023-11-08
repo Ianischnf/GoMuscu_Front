@@ -16,6 +16,7 @@ import { ProposComponent } from './propos/propos.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ExerciceListComponent } from './exercice-list/exercice-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     MuscleComponent,
     ProposComponent,
     ContactComponent,
+    ExerciceListComponent,
   ],
   imports: [
     BrowserModule,

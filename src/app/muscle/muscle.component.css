@@ -16,6 +16,11 @@
     color: white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .global_contain{
     background-image: url("../../assets/Images/background.jpg");
     background-size:230vh;

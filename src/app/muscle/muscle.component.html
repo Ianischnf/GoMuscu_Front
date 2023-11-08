@@ -3,7 +3,11 @@
 <div class="global_contain">
     <div class="muscle_container">
         <div class="muscle_card" *ngFor="let muscle of muscles">
-            <p>{{ muscle.muscleName }}</p>
+            
+            <a routerLink="/listEx/{{muscle.id}}">
+                <p>{{ muscle.muscleName }}</p>
+            </a>
+
         </div>
     </div>
 </div>
