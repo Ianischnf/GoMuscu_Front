@@ -16,10 +16,10 @@
         <div class="Formulaire">
                <!-- Formulaire ajout muscle -->
             <div *ngIf= "selectedFrom === 'muscle' " class="form">
-                <form (ngSubmit)="createExercise()">
+                <form (ngSubmit)="createMuscle">
                     <div class="form-group">
                         <label for="Exercice">Nom du muscle</label>
-                        <input [(ngModel)]="newExercice.name" type="text" id="Exercice" name="Exercice"
+                        <input type="text" id="Exercice" name="Exercice"
                             placeholder="Exercice" required>
                     </div>
 
@@ -34,18 +34,13 @@
             <!-- Formulaire ajout exercice -->
 
             <div *ngIf= "selectedFrom === 'exercice' " class="form">
-                <form (ngSubmit)="createExercise()">
+                <form (ngSubmit)="createExercice()">
                     <div class="form-group">
                         <label for="Exercice">Exercice :</label>
                         <input [(ngModel)]="newExercice.name" type="text" id="Exercice" name="Exercice"
                             placeholder="Exercice" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="Muscle">Muscle :</label>
-                        <input [(ngModel)]="newExercice.muscle" type="text" id="Muscle" name="Muscle"
-                            placeholder="Muscle" required>
-                    </div>
 
                     <div class="form-group">
                         <label for="Description">Description :</label>

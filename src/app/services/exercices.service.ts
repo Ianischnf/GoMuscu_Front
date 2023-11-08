@@ -12,23 +12,23 @@ export class ExerciceService {
 
   constructor(private http: HttpClient) {}
 
-  // Opération CREATE (Création d'un utilisateur)
+  // Opération CREATE (Création d'un exercice)
   createExercice(muscle: any) {
     return this.http.post(this.apiUrl, muscle);
   }
 
-  // Opération READ (Lecture des utilisateurs)
+  // Opération READ (Lecture des exercice)
   getExercice() {
     return this.http.get(this.apiUrl);
   }
 
-  // Opération UPDATE (Mise à jour d'un utilisateur)
+  // Opération UPDATE (Mise à jour d'un exercice)
   updateExercice(muscleId: number, user: any) {
     const url = `${this.apiUrl}${muscleId}/`;
     return this.http.put(url, user);
   }
 
-  // Opération DELETE (Suppression d'un utilisateur)
+  // Opération DELETE (Suppression d'un exercice)
   deleteExercice(muscleId: number) {
     const url = `${this.apiUrl}${muscleId}/`;
     return this.http.delete(url);
