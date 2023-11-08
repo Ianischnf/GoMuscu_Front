@@ -35,8 +35,8 @@ export class ExerciceService {
   }
 
   getExercisesByMuscleId(muscleId: number) {
-    const url = `${this.apiUrl}?muscleId=${muscleId}`;
-    console.log(muscleId);
+    const url = `${this.apiUrl}`;
+    // console.log(url, muscleId);
     
     return this.http.get(url);
   }
