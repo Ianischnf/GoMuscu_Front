@@ -1,21 +1,13 @@
 <app-navbar></app-navbar>
 
 <div class="global_contain">
-    <div class="msucle_container">
-        <div class="muscle_card">
-            <p>Muscle Name</p>
-        </div>
+    <div class="muscle_container">
+        <div class="muscle_card" *ngFor="let muscle of muscles">
+            
+            <a routerLink="/listEx/{{muscle.id}}">
+                <p>{{ muscle.muscleName }}</p>
+            </a>
 
-        <div class="muscle_card">
-            <p>Muscle Name</p>
-        </div>
-
-        <div class="muscle_card">
-            <p>Muscle Name</p>
-        </div>
-
-        <div class="muscle_card">
-            <p>Muscle Name</p>
         </div>
     </div>
 </div>

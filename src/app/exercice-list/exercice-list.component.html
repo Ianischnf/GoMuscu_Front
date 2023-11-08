@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+
+<div class="global_contain">
+    <div class="exercice_container">
+        <div class="exercice_card" *ngFor="let exercise of exercises">
+            <!-- Display exercise details here -->
+            <p>{{ exercise.name }}</p>
+        </div>
+    </div>
+</div>
