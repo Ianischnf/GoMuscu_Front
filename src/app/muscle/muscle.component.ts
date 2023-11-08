@@ -6,14 +6,15 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './muscle.component.html',
   styleUrls: ['./muscle.component.css'],
 })
-export class MuscleComponent {
-  muscles: any[] = [];  // Créez une propriété pour stocker les données
+export class MuscleComponent implements OnInit {
+
+  muscles: any[] = [];
 
   constructor(private http: HttpClient) { }
 
-  getData() {
+  ngOnInit(): void {
     this.http.get('http://localhost:8000/muscle').subscribe((data: any) => {
-      this.muscles = data.results;  // Stockez les données dans la propriété muscles
+      this.muscles = data.results;
     });
   }
 }
