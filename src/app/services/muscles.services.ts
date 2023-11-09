@@ -7,13 +7,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class MuscleService {
-  private apiUrl = 'http://127.0.0.1:8000/exercice/';
+  private apiUrl = "http://127.0.0.1:8000/muscle/";
 
   constructor(private http: HttpClient) {}
 
   // Opération CREATE (Création d'un utilisateur)
   createMuscle(muscle: any) {
-    return this.http.post(this.apiUrl, muscle);
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post(this.apiUrl, muscle, { headers: headers });
   }
 
   // Opération READ (Lecture des utilisateurs)

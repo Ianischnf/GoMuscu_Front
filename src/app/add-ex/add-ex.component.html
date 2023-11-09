@@ -16,16 +16,16 @@
         <div class="Formulaire">
                <!-- Formulaire ajout muscle -->
             <div *ngIf= "selectedFrom === 'muscle' " class="form">
-                <form (ngSubmit)="createMuscle">
+                <form (ngSubmit)="createMuscle()">
                     <div class="form-group">
-                        <label for="Exercice">Nom du muscle</label>
-                        <input type="text" id="Exercice" name="Exercice"
+                        <label for="Muscle">Nom du muscle</label>
+                        <input [(ngModel)]="muscleName" type="text" id="Muscle" name="Muscle"
                             placeholder="Exercice" required>
                     </div>
 
                     
                     <!-- Bouton pour créer un exercice -->
-                    <button class="btn_create_exo" type="submit">Créer Exercice</button>
+                    <button class="btn_create_exo" type="submit">Créer Muscle</button>
 
 
                 </form>
