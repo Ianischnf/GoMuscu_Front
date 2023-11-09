@@ -1,16 +1,18 @@
 <app-admin-nav></app-admin-nav>
-<div class="Container_Form_global">
-    <div class="Container_Form">
-        <div class="form-group">
-            <label for="Exercice">Exercice :</label>
-            <input type="text" id="Exercice" name="Exercice" placeholder="Exercice" required>
-        </div>
 
-        <div class="form-group">
-            <label for="Description">Description :</label>
-            <input type="text" id="Description" name="Description" placeholder="Description de l'exercice" required>
-        </div>
-        <!-- Bouton pour créer un exercice -->
-        <button class="btn_create_exo" type="button">Supprimer Exercice</button>
-    </div>
-</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Exercices</th>
+            <th>Muscles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let muscle of muscles">
+            <td></td>
+            <td>{{ muscle.muscleName }}</td>
+            <td><img src="../../assets/Images/remove.png" class="icon_delete"></td>
+        </tr>
+    </tbody>
+</table>

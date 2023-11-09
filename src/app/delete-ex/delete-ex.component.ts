@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ExerciceService } from '../services/exercices.service';
+import { MuscleService } from '../services/muscles.services';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-delete-ex',
   templateUrl: './delete-ex.component.html',
@@ -7,8 +9,20 @@ import { ExerciceService } from '../services/exercices.service';
 })
 export class DeleteExComponent {
   exerciceId: number = 0; // Variable pour stocker l'identifiant de l'exercice à supprimer
+  muscles: any[] = [];
+  exercices: any[] = [];
+  constructor(private muscleService: MuscleService, private exerciceService: ExerciceService, private http: HttpClient) {}
 
-  constructor(private exerciceService: ExerciceService) {}
+
+  ngOnInit(): void {
+    this.http.get('http://localhost:8000/muscle').subscribe((data: any) => {
+      this.muscles = data.results;
+    });
+    this.http.get('http://localhost:8000/exercice').subscribe((data: any) => {
+      this.exercices = data.results;
+    });
+  }
+
 
   deleteExercise() {
     // Vérifiez si l'identifiant de l'exercice est valide (non nul ou non négatif)
@@ -29,3 +43,4 @@ export class DeleteExComponent {
     }
   }
 }
+
