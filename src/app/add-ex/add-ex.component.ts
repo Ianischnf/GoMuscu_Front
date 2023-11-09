@@ -34,27 +34,33 @@ export class AddExComponent {
   
   createMuscle() {
     if (!this.muscleName) {
-      console.error('Le nom du muscle ne peut pas être vide.');
-      return;
+        console.error('Le nom du muscle ne peut pas être vide.');
+        return;
     }
 
     const muscleData = {
-      name: this.muscleName as string,
+        muscleName: this.muscleName as string,
     };
 
     console.log('MuscleData avant envoi:', muscleData);
-  
+
     this.muscleService.createMuscle(muscleData).subscribe(
-      (response: any) => {
-        this.muscleName = '';  // Réinitialisez la variable si nécessaire
-        console.log('Muscle créé avec succès:', response);
-      },
-      (error: any) => {
-        console.error('Erreur lors de la création du muscle :', error);
-      }
+        (response: any) => {
+            this.muscleName = '';  // Réinitialisez la variable si nécessaire
+            console.log('Muscle créé avec succès:', response);
+        },
+        (error: any) => {
+            console.error('Erreur lors de la création du muscle :', error);
+            if (error.error) {
+                console.error('Détails de l\'erreur :', error.error);
+            }
+        }
     );
-  }
-  
+}
+
+
+
+
   
 
 
