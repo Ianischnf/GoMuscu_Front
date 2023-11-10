@@ -36,3 +36,8 @@ input[type="text"] {
     border-radius: 1vh;
     border: none;
 }
+
+
+.icon_delete{
+    height:3vh;
+}
