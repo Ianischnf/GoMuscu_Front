@@ -16,7 +16,7 @@
         <div class="Formulaire">
                <!-- Formulaire ajout muscle -->
             <div *ngIf= "selectedFrom === 'muscle' " class="form">
-                <form (ngSubmit)="createMuscle">
+                <form (ngSubmit)="createMuscle()">
                     <div class="form-group">
                         <label for="Exercice">Nom du muscle</label>
                         <input type="text" id="Exercice" name="Exercice"
@@ -47,6 +47,14 @@
                         <input [(ngModel)]="newExercice.description" type="text" id="Description" name="Description"
                             placeholder="Description de l'exercice" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="Muscle">Muscle :</label>
+                        <select name="Muscle">
+                            <option value="test">test</option>
+                        </select> 
+                    </div>
+
                     <!-- Bouton pour créer un exercice -->
                     <button class="btn_create_exo" type="submit">Créer Exercice</button>
 

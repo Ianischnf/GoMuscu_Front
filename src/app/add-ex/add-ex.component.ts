@@ -22,6 +22,7 @@ export class AddExComponent {
   };
 
 
+
   constructor(
     private exerciceService: ExerciceService, // Injectez le service d'exercices
     private muscleService: MuscleService // Injectez le service de muscles
@@ -53,35 +54,16 @@ export class AddExComponent {
   }
   
   createMuscle() {
-    // Récupérer le token JWT depuis l'endroit où il est stocké (localStorage, sessionStorage, etc.)
-    const token = localStorage.getItem('token'); // Assurez-vous de stocker le token de manière sécurisée
-  
-    if (token) {
-      // Récupérer les données du formulaire pour le muscle (ajoutez ici la logique de récupération des données du formulaire)
-      const muscleData = {
-        name: 'Nom du muscle depuis le formulaire', // Remplacez par la valeur réelle du formulaire
-      };
-  
-      // Créer un en-tête avec le token
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  
-      // Effectuer la requête HTTP avec l'en-tête d'authentification
-      this.muscleService.createMuscle({ ...muscleData, headers }).subscribe(
-        (response: any) => {
-          // Mettez à jour la liste des muscles ou effectuez d'autres actions
-          // Réinitialisez le formulaire si nécessaire
-          // Exemple : this.newMuscle = { name: '' };
-        },
-        (error: any) => {
-          console.error('Erreur lors de la création du muscle :', error);
-        }
-      );
-    } else {
-      console.error('Token JWT non trouvé. Assurez-vous que l\'utilisateur est authentifié.');
-    }
+    // Récupérez le nom du muscle depuis la variable (ou formulaire)
+    const muscleData = {
+      name: this.muscleName,
+    };
+
+    // Appelez le service de muscles pour créer le muscle
+    this.muscleService.createMuscle(muscleData).subscribe(
+      (error: any) => {
+        console.error('Erreur lors de la création du muscle :', error);
+      }
+    );
   }
-  
-  
-
-
 }
