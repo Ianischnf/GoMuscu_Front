@@ -1,3 +1,20 @@
+.all_page{
+    height: 120vh;
+    padding-top: 25vh;
+}
+
+
+.Container_Block{
+    /* background-color: aqua; */
+    height: 60vh;
+    width: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .Container_Form_global{
     background-color: #ff6e6c;
     height: 30vh;
@@ -30,14 +47,74 @@ input[type="text"] {
     padding-left: 1vh;
 }
 
+
+.contain_btn{
+    height: 7vh;
+    
+}
+.btn_create_muscle{
+    background-color: white;
+    padding: 2vh;
+    border-radius: 1vh;
+    border: none;
+    cursor: pointer;
+    margin-left: 7vh;
+}
+.btn_create_muscle:hover{
+    background-color: #F2F3F4;
+}
+
 .btn_create_exo{
     background-color: white;
     padding: 2vh;
     border-radius: 1vh;
     border: none;
+    margin-left: 2vh;
+    cursor: pointer;
+    margin-left: 7vh;
+}
+.btn_create_exo:hover{
+    background-color: #F2F3F4;
 }
 
 
-.icon_delete{
-    height:3vh;
+.Formulaire{
+    background-color:#ff6e6c;
+    height: 36vh;
+    width: 60vh;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vh;
+}
+
+/* .form{
+    width: 100%;
+} */
+
+.Radio{
+    background-color: #ff6e6c;
+    height: 7vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vh;
+}
+
+.radio_item{
+    padding-left: 5vh;
+    display: flex;
+}
+
+.muscleList{
+    background-color: white;
+    padding: 2vh;
+    border-radius: 1vh;
+    border: none;
+    cursor: pointer;
+    margin-left: 7vh;
 }

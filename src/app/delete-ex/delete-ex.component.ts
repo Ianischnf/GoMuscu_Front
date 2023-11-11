@@ -11,6 +11,11 @@ export class DeleteExComponent {
   exerciceId: number = 0; // Variable pour stocker l'identifiant de l'exercice à supprimer
   muscles: any[] = [];
   exercices: any[] = [];
+
+  selectedFrom: string = '';
+  muscleName: string = '';
+  exerciseName: string = '';
+  selectedMuscleId: any;
   constructor(private muscleService: MuscleService, private exerciceService: ExerciceService, private http: HttpClient) {}
 
 
@@ -23,24 +28,21 @@ export class DeleteExComponent {
     });
   }
 
-
-  deleteExercise() {
-    // Vérifiez si l'identifiant de l'exercice est valide (non nul ou non négatif)
-    if (this.exerciceId > 0) {
-      // Appelez le service d'exercices pour supprimer l'exercice en utilisant son identifiant
-      this.exerciceService.deleteExercice(this.exerciceId).subscribe(
-        (response: any) => {
-          // Effectuez des actions après la suppression, par exemple, mettre à jour la liste des exercices
-          // Réinitialisez l'identifiant si nécessaire
-          this.exerciceId = 0;
-        },
-        (error: any) => {
-          console.error('Erreur lors de la suppression de l\'exercice :', error);
-        }
-      );
-    } else {
-      console.error('Identifiant de l\'exercice invalide.');
-    }
-  }
+  onSelectMuscle(event: any) {
+    this.selectedMuscleId = parseInt(event.target.value, 10);
 }
 
+deleteMuscle() {
+    if (this.selectedMuscleId) {
+        this.muscleService.deleteMuscle(this.selectedMuscleId).subscribe(
+            (response: any) => {
+                console.log('Muscle supprimé avec succès:', response);
+                // Peut-être des actions supplémentaires ici après la suppression
+            },
+            (error: any) => {
+                console.error('Erreur lors de la suppression du muscle :', error);
+            }
+        );
+    }
+}
+}
