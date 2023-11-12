@@ -32,6 +32,10 @@
 /* CSS */
 .form-group {
     margin-bottom: 15px; /* Espacement entre chaque groupe label + input */
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 label {
@@ -58,7 +62,6 @@ input[type="text"] {
     border-radius: 1vh;
     border: none;
     cursor: pointer;
-    margin-left: 7vh;
 }
 .btn_create_muscle:hover{
     background-color: #F2F3F4;
@@ -72,6 +75,7 @@ input[type="text"] {
     margin-left: 2vh;
     cursor: pointer;
     margin-left: 7vh;
+    width: 20vh;
 }
 .btn_create_exo:hover{
     background-color: #F2F3F4;
@@ -110,11 +114,29 @@ input[type="text"] {
     display: flex;
 }
 
-.muscleList{
+select{
     background-color: white;
     padding: 2vh;
     border-radius: 1vh;
     border: none;
     cursor: pointer;
     margin-left: 7vh;
+    width: 20vh;
+}
+
+.contain_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Ajustez selon l'espacement désiré */
+}
+
+label, select, button {
+    margin: 5px 0;
 }

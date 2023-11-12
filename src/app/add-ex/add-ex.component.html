@@ -35,26 +35,21 @@
 
             <!-- Formulaire ajout exercice -->
 
-            <div *ngIf= "selectedFrom === 'exercice' " class="form">
-                <form (ngSubmit)="createExercice()">
-                    <div class="form-group">
-                        <label for="Exercice">Exercice :</label>
-                        <input [(ngModel)]="newExercice.name" type="text" id="Exercice" name="Exercice"
-                            placeholder="Exercice" required>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="Description">Description :</label>
-                        <input [(ngModel)]="newExercice.description" type="text" id="Description" name="Description"
-                            placeholder="Description de l'exercice" required>
-                    </div>
-                    <!-- Bouton pour créer un exercice -->
-                    <button class="btn_create_exo" type="submit">Créer Exercice</button>
-
-
-                </form>
+            <div *ngIf="selectedFrom === 'exercice'" class="form">
+              <form (ngSubmit)="createExercice()">
+                <input [(ngModel)]="name" name="name" type="text" placeholder="Nom de l'exercice">
+                <input [(ngModel)]="desc" name="description" type="text" placeholder="Description">
+              
+                <select id="muscleList" name="muscleList" (change)="onSelectMuscle($event)">
+                  <option *ngFor="let muscle of muscles" [value]="muscle.id">
+                    {{ muscle.muscleName }}
+                  </option>
+                </select>
+              
+                <button type="submit">Créer</button>
+              </form>
             </div>
             
-        </div>
+              
+              
     </div>

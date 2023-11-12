@@ -14,45 +14,48 @@
             </div>
         </div>
         <div class="Formulaire">
-               <!-- Formulaire ajout muscle -->
-               <div *ngIf="selectedFrom === 'muscle'" class="form">
+            <!-- Formulaire ajout muscle -->
+            <div *ngIf="selectedFrom === 'muscle'" class="form">
                 <form>
                     <div class="form-group">
-                        <label for="Muscle">Nom du muscle</label>
-                        <select id="muscleList" name="muscleList" (change)="onSelectMuscle($event)">
-                            <option *ngFor="let muscle of muscles" [value]="muscle.id">
-                                {{ muscle.muscleName }}
-                            </option>
-                        </select>
+                        <div class="contain_input">
+                            <div class="input-group">
+                                <label for="Muscle">Nom du muscle</label>
+                                <select id="muscleList" name="muscleList" (change)="onSelectMuscle($event)">
+                                    <option *ngFor="let muscle of muscles" [value]="muscle.id">
+                                        {{ muscle.muscleName }}
+                                    </option>
+                                </select>
+                                <button class="btn_create_muscle" (click)="deleteMuscle()" type="button">Supprimer Muscle</button>
+                            </div>
+                        </div>
                     </div>
-            
-                    <button class="btn_create_muscle" (click)="deleteMuscle()" type="button">Supprimer Muscle</button>
                 </form>
             </div>
+             <!-- Formulaire ajout exercice -->
+
+             <div *ngIf="selectedFrom === 'exercice'" class="form">
+               
+                <!-- Formulaire ajout exercice -->
+                <div *ngIf="selectedFrom === 'exercice'" class="form">
+                    <form>
+                        <div class="form-group">
+                            <label for="Exercice">Exercice :</label>
+                            <input type="text" id="Exercice" name="Exercice" placeholder="Nom de l'exercice" required>
+                        </div>
             
-
-            <!-- Formulaire ajout exercice -->
-
-            <div *ngIf= "selectedFrom === 'exercice' " class="form">
-                <form>
-                    <div class="form-group">
-                        <label for="Exercice">Exercice :</label>
-                        <input type="text" id="Exercice" name="Exercice"
-                            placeholder="Exercice" required>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="Description">Description :</label>
-                        <input type="text" id="Description" name="Description"
-                            placeholder="Description de l'exercice" required>
-                    </div>
-                    <!-- Bouton pour créer un exercice -->
-                    <button class="btn_create_exo" type="submit">Supprimer Exercice</button>
-
-
-                </form>
-            </div>
+                        <div class="form-group">
+                            <label for="Description">Description :</label>
+                            <textarea id="Description" name="Description" placeholder="Description de l'exercice" required></textarea>
+                        </div>
             
+                        <!-- Bouton pour ajouter un exercice -->
+                        <button class="btn_create_exo" type="submit">Ajouter Exercice</button>
+                    </form>
+                </div>
+            
+            
+        </div>
+        </div>
         </div>
     </div>

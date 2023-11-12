@@ -12,8 +12,9 @@ export class ExerciceService {
   constructor(private http: HttpClient) { }
 
   // Opération CREATE (Création d'un exercice)
-  createExercice(muscle: any) {
-    return this.http.post(this.apiUrl, muscle);
+  createExercice(exercice: any) {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post(this.apiUrl, exercice, {headers: headers});
   }
 
   // Opération READ (Lecture des exercice)
@@ -22,20 +23,20 @@ export class ExerciceService {
   }
 
   // Opération UPDATE (Mise à jour d'un exercice)
-  updateExercice(muscleId: number, user: any) {
-    const url = `${this.apiUrl}${muscleId}/`;
+  updateExercice(exerciceId: number, user: any) {
+    const url = `${this.apiUrl}${exerciceId}/`;
     return this.http.put(url, user);
   }
 
   // Opération DELETE (Suppression d'un exercice)
-  deleteExercice(muscleId: number) {
-    const url = `${this.apiUrl}${muscleId}/`;
+  deleteExercice(exerciceId: number) {
+    const url = `${this.apiUrl}${exerciceId}/`;
     return this.http.delete(url);
   }
 
-  getExercisesByMuscleId(muscleId: number) {
-    const url = `${this.apiUrl}?muscleId=${muscleId}`;
-    console.log(muscleId);
+  getExercisesByMuscleId(exerciceId: number) {
+    const url = `${this.apiUrl}?exerciceId=${exerciceId}`;
+    console.log(exerciceId);
     
     return this.http.get(url);
   }
