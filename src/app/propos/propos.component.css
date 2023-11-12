@@ -1,21 +1,21 @@
-.navbar{
+.Container_Global{
+    background-image: url("../../assets/Images/background.jpg");
+    background-size:230vh;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-content: space-around;
     justify-content: space-around;
-    background-color: #ff6e6c;
-    height: 10vh;
-    align-items: center;
 }
 
-.nav-right{
-    display: flex;
-}
 
-.navbar-item{
-    padding-right: 5vh;
-}
-
-.navbar-item > a {
-    text-decoration: none;
+p{
+    background-color: #333333bc;
     color: white;
+    padding: 1%;
+    text-align: justify;
+    line-height: 25px;
+    font-size: 16px;
+    border-radius: 1vh;
 }

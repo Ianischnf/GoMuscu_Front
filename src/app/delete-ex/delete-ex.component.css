@@ -1,6 +1,12 @@
-.all_page{
-    height: 120vh;
-    padding-top: 25vh;
+.mainContainer{
+    background-image: url("../../assets/Images/background.jpg");
+    background-size:230vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 

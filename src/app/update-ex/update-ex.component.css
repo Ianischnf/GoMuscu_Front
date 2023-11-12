@@ -1,7 +1,5 @@
 .Container_Form_global{
     background-color: #ff6e6c;
-    height: 30vh;
-    width: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -10,6 +8,17 @@
     border-radius: 3vh;
     padding: 5vh;
     color: white;
+}
+
+.mainContainer{
+    background-image: url("../../assets/Images/background.jpg");
+    background-size:230vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 /* CSS */
@@ -35,4 +44,12 @@ input[type="text"] {
     padding: 2vh;
     border-radius: 1vh;
     border: none;
+}
+
+
+.exercice_card{
+    background-color: #ffffff42;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-radius: 1vh;
 }

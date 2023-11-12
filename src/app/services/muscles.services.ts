@@ -1,4 +1,4 @@
-// user.service.ts
+// muscle.service.ts
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -23,9 +23,9 @@ export class MuscleService {
   }
 
   // Opération UPDATE (Mise à jour d'un utilisateur)
-  updateMuscle(muscleId: number, user: any) {
+  updateMuscle(muscleId: number, muscle: any) {
     const url = `${this.apiUrl}${muscleId}/`;
-    return this.http.put(url, user);
+    return this.http.put(url, muscle);
   }
 
   // Opération DELETE (Suppression d'un utilisateur)

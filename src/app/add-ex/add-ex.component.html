@@ -1,53 +1,52 @@
 <app-admin-nav></app-admin-nav>
 
-<div class="all_page">
-    <div class="Container_Block">
-        <div class="Radio">
-            <div class="radio_item">
-                <input type="radio" id="option1" name="choices" [(ngModel)]="selectedFrom" value="exercice">
-                <label for="option1">Exercice</label>
-            </div>
+<div class="mainContainer">
+  <div class="Container_Block">
+    <div class="Radio">
+      <div class="radio_item">
+        <input type="radio" id="option1" name="choices" [(ngModel)]="selectedFrom" value="exercice">
+        <label for="option1">Exercice</label>
+      </div>
 
-            <div class="radio_item">
-                <input type="radio" id="option1" name="choices"  [(ngModel)]="selectedFrom" value="muscle">
-                <label for="option1">Muscle</label>
-            </div>
-        </div>
-        <div class="Formulaire">
-               <!-- Formulaire ajout muscle -->
-            <div *ngIf= "selectedFrom === 'muscle' " class="form">
-                <form (ngSubmit)="createMuscle()">
-                    <div class="form-group">
-                        <label for="Muscle">Nom du muscle</label>
-                        <input [(ngModel)]="muscleName" type="text" id="Muscle" name="Muscle"
-                            placeholder="Exercice" required>
-                    </div>
+      <div class="radio_item">
+        <input type="radio" id="option1" name="choices" [(ngModel)]="selectedFrom" value="muscle">
+        <label for="option1">Muscle</label>
+      </div>
+    </div>
+    <div class="Formulaire">
+      <!-- Formulaire ajout muscle -->
+      <div *ngIf="selectedFrom === 'muscle' " class="form">
+        <form (ngSubmit)="createMuscle()">
+          <div class="form-group">
+            <label for="Muscle">Nom du muscle</label>
+            <input [(ngModel)]="muscleName" type="text" id="Muscle" name="Muscle" placeholder="Exercice" required>
+          </div>
 
-                    
-                    <!-- Bouton pour créer un exercice -->
-                    
-                        <button class="btn_create_muscle" type="submit">Créer Muscle</button>
-                    
-                   
 
-                </form>
-            </div>
+          <!-- Bouton pour créer un exercice -->
 
-            <!-- Formulaire ajout exercice -->
-            <div *ngIf="selectedFrom === 'exercice'" class="form">
-              <form (ngSubmit)="createExercice()" class="column-form">
-                <input [(ngModel)]="name" name="name" type="text" placeholder="Nom de l'exercice">
-                <input [(ngModel)]="desc" name="desc" type="text" placeholder="Description">
-                
-                <select id="muscleList" name="idMuscle" (change)="onSelectMuscle($event)">
-                  <option *ngFor="let muscle of muscles" [value]="muscle.id">
-                    {{ muscle.muscleName }}
-                  </option>
-                </select>
-                
-                <button type="submit">Créer</button>
-              </form>
-            </div>
-            
-            
+          <button class="btn_create_muscle" type="submit">Créer Muscle</button>
+
+
+
+        </form>
+      </div>
+
+      <!-- Formulaire ajout exercice -->
+      <div *ngIf="selectedFrom === 'exercice'" class="form">
+        <form (ngSubmit)="createExercice()" class="column-form">
+          <input [(ngModel)]="name" name="name" type="text" placeholder="Nom de l'exercice">
+          <input [(ngModel)]="desc" name="desc" type="text" placeholder="Description">
+
+          <select id="muscleList" name="idMuscle" (change)="onSelectMuscle($event)">
+            <option *ngFor="let muscle of muscles" [value]="muscle.id">
+              {{ muscle.muscleName }}
+            </option>
+          </select>
+
+          <button type="submit">Créer</button>
+        </form>
+      </div>
+
+
     </div>

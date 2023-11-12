@@ -1,0 +1,30 @@
+.Container_Global {
+    background-image: url("../../assets/Images/background.jpg");
+    background-size: 230vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    color: white;
+}
+
+.exercice_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.exercice_card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ff6e6c;
+    padding: 1%;
+    margin: 1% 1% 1% 1%;
+    justify-content: center;
+    border-radius: 1vh;
+}

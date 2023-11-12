@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { ExerciceService } from '../services/exercices.service';
 import { MuscleService } from '../services/muscles.services';
 import { HttpClient } from '@angular/common/http';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-delete-ex',
   templateUrl: './delete-ex.component.html',
   styleUrls: ['./delete-ex.component.css']
 })
 export class DeleteExComponent {
-  exerciceId: number = 0; // Variable pour stocker l'identifiant de l'exercice à supprimer
   muscles: any[] = [];
   exercices: any[] = [];
 
@@ -16,7 +16,8 @@ export class DeleteExComponent {
   muscleName: string = '';
   exerciseName: string = '';
   selectedMuscleId: any;
-  constructor(private muscleService: MuscleService, private exerciceService: ExerciceService, private http: HttpClient) {}
+  selectedExerciceId: any;
+  constructor(private muscleService: MuscleService, private exerciceService: ExerciceService, private http: HttpClient, private location: Location) { }
 
 
   ngOnInit(): void {
@@ -30,19 +31,38 @@ export class DeleteExComponent {
 
   onSelectMuscle(event: any) {
     this.selectedMuscleId = parseInt(event.target.value, 10);
-}
+  }
 
-deleteMuscle() {
+  onSelectExercice(event: any) {
+    this.selectedExerciceId = parseInt(event.target.value, 10);
+  }
+
+  deleteMuscle() {
     if (this.selectedMuscleId) {
-        this.muscleService.deleteMuscle(this.selectedMuscleId).subscribe(
-            (response: any) => {
-                console.log('Muscle supprimé avec succès:', response);
-                // Peut-être des actions supplémentaires ici après la suppression
-            },
-            (error: any) => {
-                console.error('Erreur lors de la suppression du muscle :', error);
-            }
-        );
+      this.muscleService.deleteMuscle(this.selectedMuscleId).subscribe(
+        (response: any) => {
+          console.log('Muscle supprimé avec succès:', response);
+          window.location.reload(); 
+        },
+        (error: any) => {
+          console.error('Erreur lors de la suppression du muscle :', error);
+        }
+      );
     }
-}
+  }
+
+  deleteExercice() {
+    if (this.selectedExerciceId) {
+      this.exerciceService.deleteExercice(this.selectedExerciceId).subscribe(
+        (response: any) => {
+          console.log('exercice supprimé avec succès:', response);
+          window.location.reload(); 
+
+        },
+        (error: any) => {
+          console.error('Erreur lors de la suppression du exercice :', error);
+        }
+      );
+    }
+  }
 }

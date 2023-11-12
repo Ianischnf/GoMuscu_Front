@@ -1,6 +1,6 @@
 <app-admin-nav></app-admin-nav>
 
-<div class="all_page">
+<div class="mainContainer">
     <div class="Container_Block">
         <div class="Radio">
             <div class="radio_item">
@@ -9,7 +9,7 @@
             </div>
 
             <div class="radio_item">
-                <input type="radio" id="option1" name="choices"  [(ngModel)]="selectedFrom" value="muscle">
+                <input type="radio" id="option1" name="choices" [(ngModel)]="selectedFrom" value="muscle">
                 <label for="option1">Muscle</label>
             </div>
         </div>
@@ -26,33 +26,34 @@
                                         {{ muscle.muscleName }}
                                     </option>
                                 </select>
-                                <button class="btn_create_muscle" (click)="deleteMuscle()" type="button">Supprimer Muscle</button>
+                                <button class="btn_create_muscle" (click)="deleteMuscle()" type="button">Supprimer
+                                    Muscle</button>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-             <!-- Formulaire ajout exercice -->
 
-             <div *ngIf="selectedFrom === 'exercice'" class="form">
-               
-                <!-- Formulaire SUPP exercice -->
+            <!-- Formulaire SUPP exercice -->
+
+            <div *ngIf="selectedFrom === 'exercice'" class="form">
                 <div *ngIf="selectedFrom === 'exercice'" class="form">
                     <form>
                         <div class="form-group">
                             <label for="Exercice">Exercice :</label>
-                            <input type="text" id="Exercice" name="Exercice" placeholder="Nom de l'exercice" required>
+                            <select id="exerciceList" name="exerciceList" (change)="onSelectExercice($event)">
+                                <option *ngFor="let exercice of exercices" [value]="exercice.id">
+                                    {{ exercice.name }}
+                                </option>
+                            </select>
                         </div>
-            
-                       
-            
-                        <!-- Bouton pour ajouter un exercice -->
-                        <button class="btn_create_exo" type="submit">Supprimer</button>
+
+                        <!-- Bouton pour supprimer un exercice -->
+                        <button class="btn_create_exo" type="submit" (click)="deleteExercice()">Supprimer</button>
                     </form>
                 </div>
-            
-            
-        </div>
-        </div>
+            </div>
+
         </div>
     </div>
+</div>
