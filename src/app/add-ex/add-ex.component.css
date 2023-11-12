@@ -109,3 +109,17 @@ input[type="text"] {
     padding-left: 5vh;
     display: flex;
 }
+
+
+.column-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px; /* Ajuste la largeur selon tes besoins */
+  }
+  
+  .column-form input,
+  .column-form select,
+  .column-form button {
+    margin-bottom: 10px; /* Espacement entre les éléments */
+  }
+  

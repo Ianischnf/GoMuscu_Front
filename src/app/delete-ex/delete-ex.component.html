@@ -1,18 +1,58 @@
 <app-admin-nav></app-admin-nav>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Exercices</th>
-            <th>Muscles</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let muscle of muscles">
-            <td></td>
-            <td>{{ muscle.muscleName }}</td>
-            <td><img src="../../assets/Images/remove.png" class="icon_delete"></td>
-        </tr>
-    </tbody>
-</table>
+<div class="all_page">
+    <div class="Container_Block">
+        <div class="Radio">
+            <div class="radio_item">
+                <input type="radio" id="option1" name="choices" [(ngModel)]="selectedFrom" value="exercice">
+                <label for="option1">Exercice</label>
+            </div>
+
+            <div class="radio_item">
+                <input type="radio" id="option1" name="choices"  [(ngModel)]="selectedFrom" value="muscle">
+                <label for="option1">Muscle</label>
+            </div>
+        </div>
+        <div class="Formulaire">
+            <!-- Formulaire supp muscle -->
+            <div *ngIf="selectedFrom === 'muscle'" class="form">
+                <form>
+                    <div class="form-group">
+                        <div class="contain_input">
+                            <div class="input-group">
+                                <label for="Muscle">Nom du muscle</label>
+                                <select id="muscleList" name="muscleList" (change)="onSelectMuscle($event)">
+                                    <option *ngFor="let muscle of muscles" [value]="muscle.id">
+                                        {{ muscle.muscleName }}
+                                    </option>
+                                </select>
+                                <button class="btn_create_muscle" (click)="deleteMuscle()" type="button">Supprimer Muscle</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <!-- Formulaire ajout exercice -->
+
+             <div *ngIf="selectedFrom === 'exercice'" class="form">
+               
+                <!-- Formulaire SUPP exercice -->
+                <div *ngIf="selectedFrom === 'exercice'" class="form">
+                    <form>
+                        <div class="form-group">
+                            <label for="Exercice">Exercice :</label>
+                            <input type="text" id="Exercice" name="Exercice" placeholder="Nom de l'exercice" required>
+                        </div>
+            
+                       
+            
+                        <!-- Bouton pour ajouter un exercice -->
+                        <button class="btn_create_exo" type="submit">Supprimer</button>
+                    </form>
+                </div>
+            
+            
+        </div>
+        </div>
+        </div>
+    </div>
