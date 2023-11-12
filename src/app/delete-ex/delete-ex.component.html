@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="Formulaire">
-            <!-- Formulaire ajout muscle -->
+            <!-- Formulaire supp muscle -->
             <div *ngIf="selectedFrom === 'muscle'" class="form">
                 <form>
                     <div class="form-group">
@@ -36,7 +36,7 @@
 
              <div *ngIf="selectedFrom === 'exercice'" class="form">
                
-                <!-- Formulaire ajout exercice -->
+                <!-- Formulaire SUPP exercice -->
                 <div *ngIf="selectedFrom === 'exercice'" class="form">
                     <form>
                         <div class="form-group">
@@ -44,13 +44,10 @@
                             <input type="text" id="Exercice" name="Exercice" placeholder="Nom de l'exercice" required>
                         </div>
             
-                        <div class="form-group">
-                            <label for="Description">Description :</label>
-                            <textarea id="Description" name="Description" placeholder="Description de l'exercice" required></textarea>
-                        </div>
+                       
             
                         <!-- Bouton pour ajouter un exercice -->
-                        <button class="btn_create_exo" type="submit">Ajouter Exercice</button>
+                        <button class="btn_create_exo" type="submit">Supprimer</button>
                     </form>
                 </div>
             

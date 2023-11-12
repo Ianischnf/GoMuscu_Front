@@ -15,16 +15,11 @@ export class AddExComponent {
   muscleName: string = '';
   name: string = '';
   desc : string = '';
-  idMuscle: number = 0;
+  
+  idMuscle: string = "";
   selectedMuscle: any;
   muscles: any[] = [];
   exercices: any[] = [];
-
-  // newExercice = {
-  //   name: '',
-  //   muscle: '',
-  //   description: '',
-  // };
 
 
  constructor(
@@ -45,29 +40,31 @@ export class AddExComponent {
 
 
   onSelectMuscle(event: any) {
-    this.selectedMuscle = parseInt(event.target.value, 10);
-}
+    const selectedMuscleId = event.target.value;
+    this.idMuscle = selectedMuscleId.toString(); // Assurez-vous que l'ID du muscle est une chaîne
+  }
+  
+  
   
   createExercice() {
-    if (!this.name || !this.desc || !this.idMuscle ) {
-      console.error('Le nom de l\'exercice ou l\'ID du muscle ne peuvent pas être vides.');
+    if (!this.name || !this.desc || !this.idMuscle) {
+      console.error('Le nom de l\'exercice, la description ou le muscle ne peuvent pas être vides.');
       return;
     }
-  
-    const exerciceData = {
-      name: this.name as string,
-      desc: this.desc as string,
-      idMuscle: this.idMuscle
+    
+    const ExerciceData = {
+      name: this.name,
+      desc: this.desc,
+      idMuscle: this.idMuscle // Assignation directe de l'ID
     };
   
-    console.log('Exercice avant envoi :', exerciceData);
-  
-    this.exerciceService.createExercice(exerciceData).subscribe(
+    // Appel de l'API avec les données formatées
+    this.exerciceService.createExercice(ExerciceData).subscribe(
       (response: any) => {
-        this.name = '';
-        this.desc = '';
-        this.idMuscle = 0;
         console.log('Exercice créé avec succès :', response);
+        this.name = '';
+        this. desc = '';
+        this.idMuscle= '';
       },
       (error: any) => {
         console.error('Erreur lors de la création de l\'exercice :', error);
@@ -77,6 +74,7 @@ export class AddExComponent {
       }
     );
   }
+  
 
   // Vérifiez si muscleName est vide
   

@@ -34,22 +34,20 @@
             </div>
 
             <!-- Formulaire ajout exercice -->
-
             <div *ngIf="selectedFrom === 'exercice'" class="form">
-              <form (ngSubmit)="createExercice()">
+              <form (ngSubmit)="createExercice()" class="column-form">
                 <input [(ngModel)]="name" name="name" type="text" placeholder="Nom de l'exercice">
-                <input [(ngModel)]="desc" name="description" type="text" placeholder="Description">
-              
-                <select id="muscleList" name="muscleList" (change)="onSelectMuscle($event)">
+                <input [(ngModel)]="desc" name="desc" type="text" placeholder="Description">
+                
+                <select id="muscleList" name="idMuscle" (change)="onSelectMuscle($event)">
                   <option *ngFor="let muscle of muscles" [value]="muscle.id">
                     {{ muscle.muscleName }}
                   </option>
                 </select>
-              
+                
                 <button type="submit">Créer</button>
               </form>
             </div>
             
-              
-              
+            
     </div>

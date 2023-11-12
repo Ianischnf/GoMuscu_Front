@@ -13,9 +13,12 @@ export class ExerciceService {
 
   // Opération CREATE (Création d'un exercice)
   createExercice(exercice: any) {
+    exercice.idMuscle = `http://127.0.0.1:8000/muscle/${exercice.idMuscle}/`;
+  
     const headers = { 'Content-Type': 'application/json' };
-    return this.http.post(this.apiUrl, exercice, {headers: headers});
+    return this.http.post(this.apiUrl, exercice, { headers: headers });
   }
+  
 
   // Opération READ (Lecture des exercice)
   getExercice() {
