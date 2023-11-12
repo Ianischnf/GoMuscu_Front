@@ -1,5 +1,8 @@
 # GoMuscu
 
+## INSTALLATION AND LAUNCH
+After cloning the repository, using a terminal, go to the folder and execute the command "npm install", then you may launch the project using "ng serve" (ATTENTION, Make sure you clonned our repository "https://github.com/Salman-Ali05/GoMuscuPythonDjango.git" to access to full project !)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
 ## Development server
